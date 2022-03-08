@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddBillActivity"
+    android:orientation="vertical"
+    android:focusable="auto"
+    android:background="#FDFEFE">>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="Agregar Cuenta"
+        android:textSize="50dp" />
+
+
+    <EditText
+        android:id="@+id/dinning_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Mesa"
+        android:inputType="number"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/button_addbill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#52BE80 "
+        android:ems="13"
+        android:onClick="saveBillFun"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:singleLine="true"
+        />
+
+    <Button
+        android:id="@+id/button_viewbills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver cuentas"
+        android:onClick="getListBillsFun"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFC063"
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:singleLine="true"
+        />
+
+    <TableLayout
+        android:id="@+id/table_bills"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp">
+
+        <TableRow
+            android:id="@+id/Cabecera"
+            style="@style/CardView.Dark">
+            <TextView android:text="#"
+                android:layout_width="50dp"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:text="Mesa"
+                android:layout_width="100dp"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:text="Mesero"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:text="Acciones"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+</LinearLayout>

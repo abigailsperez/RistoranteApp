@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="3dp">
+
+    <TextView
+        android:id="@+id/colName"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nombre"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/colPrice"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Precio"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/colCategory"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Categoría"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_editMenu"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:onClick="tableEditMenu"
+        android:text="Editar"
+        android:textSize="10sp"
+        android:backgroundTint="#E9967A"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
+
+</TableRow>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddMealActivity"
+    android:orientation="vertical"
+    android:focusable="auto"
+    android:background="#FDFEFE">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="Agregar Platillo"
+        android:textSize="50dp" />
+
+    <EditText
+        android:id="@+id/name_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:ems="15"
+        android:focusable="true"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        />
+
+    <EditText
+        android:id="@+id/category_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Categoría"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:ems="15"
+        android:focusable="true"
+        android:inputType="numberDecimal"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        />
+
+    <EditText
+        android:id="@+id/price_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Precio"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:ems="15"
+        android:focusable="true"
+        android:inputType="numberDecimal"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        />
+
+    <EditText
+        android:id="@+id/available"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Habilitar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:ems="15"
+        android:focusable="true"
+        android:inputType="number"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        />
+
+    <Button
+        android:id="@+id/button_addmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:layout_gravity="center_horizontal"
+        android:onClick="saveMenuFun"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#52BE80 "
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:singleLine="true"
+        />
+
+    <Button
+        android:id="@+id/button_viewcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFC063"
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:onClick="viewMenu"
+        android:singleLine="true"
+        android:text="Ver platillos"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#FDFEFE"
+    android:focusable="auto"
+    android:orientation="vertical"
+    tools:context=".view.AddCategoryActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="Agregar Categoría"
+        android:textSize="50dp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+
+
+    <Button
+        android:id="@+id/button_addcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#52BE80"
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:onClick="saveCategoryFun"
+        android:singleLine="true"
+        android:text="Guardar"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_viewcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFC063"
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:onClick="getListCategoryFun"
+        android:singleLine="true"
+        android:text="Ver categorías"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/table_category"
+        style="@style/CardView.Light"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp">
+
+        <TableRow
+            android:id="@+id/Cabecera"
+            style="@style/CardView.Dark">
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_column="0"
+                android:fontFamily="monospace"
+                android:paddingRight="3dip"
+                android:singleLine="true"
+                android:text="#"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_column="1"
+                android:fontFamily="monospace"
+                android:padding="3dip"
+                android:singleLine="true"
+                android:text="Categoría"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_column="2"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:text="Acciones"
+                android:textStyle="bold"></TextView>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/Category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+
+</LinearLayout>
