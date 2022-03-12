@@ -15,13 +15,17 @@ import com.example.ristorantehttp.controller.ControllerBill
 import com.example.ristorantehttp.services.InterfaceBill
 import com.example.ristorantehttp.services.InterfaceListCategory
 import com.example.ristorantehttp.services.ServiceB
+import okhttp3.internal.http.toHttpDateOrNull
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class AddBillActivity : AppCompatActivity() {
 
-    private lateinit var dinning_table: EditText
+    private lateinit var diningT: EditText
     private var table_bills: TableLayout?=null
 
 
@@ -29,7 +33,7 @@ class AddBillActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_bill)
 
-        dinning_table= findViewById(R.id.dinning_table)
+        diningT= findViewById(R.id.diningTable)
         table_bills=findViewById(R.id.table_bills)
     }
 
@@ -39,9 +43,18 @@ class AddBillActivity : AppCompatActivity() {
         println("FUNCIÓN GUARDAR CUENTA")
 
         val idUser =  intent.getLongExtra("idUser", 0)
+        val c: Calendar = Calendar.getInstance()
+        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        val strDate: String = sdf.format(c.getTime())
+        println(""+strDate)
+
         val saveBillObj = SaveBill()
-        saveBillObj.dinning_table = dinning_table.text.toString().toLong() //TextView del name(categoria)
+        saveBillObj.date_Bill= strDate
+        saveBillObj.completed= 0
+        saveBillObj.diningTable = diningT.text.toString().toLong() //TextView del name(categoria)
         saveBillObj.user = idUser //response.body()!!.restaurant
+
+        println("mesa: "+  diningT.text)
 
         val service = ServiceB.buildService(InterfaceBill::class.java) //Consumo de web services
         val call = service.saveBill(saveBillObj)
@@ -91,11 +104,12 @@ class AddBillActivity : AppCompatActivity() {
     fun getListBillsFun(view: View){
 
         var otroContador = 0
-        val idUser =  intent.getLongExtra("idUser", 0)
+        //val idUser =  intent.getLongExtra("idUser", 0)
+        val idRest =  intent.getLongExtra("restaurant", 0)
 
         //Consumo de web services
         val service = ServiceB.buildService(InterfaceBill::class.java)
-        val call = service.getBill(idUser)
+        val call = service.getBill(idRest)
 
         call.enqueue(object : Callback<List<ListBillResPonseKT>> {
             override fun onResponse(
@@ -111,7 +125,8 @@ class AddBillActivity : AppCompatActivity() {
                             //Se busca en la BD
                             var data =
                                 "id " + it.id +
-                                        "date_bill" + it.dateBill +
+                                        "completed" + it.completed +
+                                        "date_bill" + it.date_Bill +
                                         "dining_table" + it.diningTable +
                                         "user" + it.user
                             listData.add(data)
@@ -120,7 +135,8 @@ class AddBillActivity : AppCompatActivity() {
                             println("\n\n")
                             println(
                                 "\nid: " + it.id +
-                                        "\ndate_bill: " + it.dateBill+
+                                        "\ncompleted: " + it.completed +
+                                        "\ndate_bill: " + it.date_Bill+
                                         "\ndining_table: " + it.diningTable+
                                         "\nuser: " + it.user)
 
@@ -128,11 +144,13 @@ class AddBillActivity : AppCompatActivity() {
 
                             val register =
                                 LayoutInflater.from(this@AddBillActivity).inflate(R.layout.table_row_bill_waiter, null, false)
-                            val colBill: TextView = register.findViewById<View>(R.id.colTable) as TextView
-                            val colTable: TextView = register.findViewById<View>(R.id.colDate) as TextView
+                            val colWaiter: TextView = register.findViewById<View>(R.id.colWaiter) as TextView
+                            val colTable: TextView = register.findViewById<View>(R.id.colTable) as TextView
+                            val colDate: TextView = register.findViewById<View>(R.id.colDate) as TextView
                             val btnEdit: View = register.findViewById<View>(R.id.btn_editBill) as Button
-                            colBill.text = ""+ it.diningTable
-                            colTable.text = ""+it.dateBill
+                            colDate.text = ""+it.date_Bill.toString()
+                            colTable.text = ""+it.diningTable
+                            colWaiter.text = ""+ it.user
                             btnEdit.id = (""+ it.id).toInt()
                             table_bills?.addView(register)
 
@@ -146,7 +164,7 @@ class AddBillActivity : AppCompatActivity() {
 
                     //Tabla categorías vacia
                     response.code() == 404 -> {
-                        Toast.makeText(this@AddBillActivity, "No se encontraron categorias registrados", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@AddBillActivity, "No se encontraron cuentas registradas", Toast.LENGTH_LONG).show()
                     }
 
                     //Error de conexión al servidor

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AddMealActivity"
-    android:orientation="vertical"
+    android:background="#FDFEFE"
     android:focusable="auto"
-    android:background="#FDFEFE">
+    android:orientation="vertical"
+    tools:context=".view.AddMealActivity">
 
 
     <TextView
@@ -23,76 +23,67 @@
         android:id="@+id/name_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:ems="15"
         android:focusable="true"
+        android:hint="Nombre"
         android:inputType="text"
         android:maxLength="30"
         android:minHeight="48dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
 
     <EditText
         android:id="@+id/category_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Categoría"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:ems="15"
         android:focusable="true"
+        android:hint="Categoría"
         android:inputType="numberDecimal"
         android:maxLength="30"
         android:minHeight="48dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
 
     <EditText
         android:id="@+id/price_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Precio"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:ems="15"
         android:focusable="true"
+        android:hint="Precio"
         android:inputType="numberDecimal"
         android:maxLength="30"
         android:minHeight="48dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
 
-    <EditText
-        android:id="@+id/available"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Habilitar"
-        android:layout_gravity="center_horizontal"
+    <Spinner
+        android:id="@+id/available_spinner"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="193dp"
+        android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:ems="15"
-        android:focusable="true"
-        android:inputType="number"
-        android:maxLength="30"
-        android:minHeight="48dp"
-        android:singleLine="true"
-        />
+        android:layout_gravity="center_horizontal"
+        android:spinnerMode="dropdown" />
 
     <Button
         android:id="@+id/button_addmenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
         android:layout_gravity="center_horizontal"
-        android:onClick="saveMenuFun"
         android:layout_marginTop="30dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
         android:fontFamily="monospace"
-        android:textStyle="bold"
+        android:onClick="saveMenuFun"
         android:singleLine="true"
-        />
+        android:text="Guardar"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_viewcategory"

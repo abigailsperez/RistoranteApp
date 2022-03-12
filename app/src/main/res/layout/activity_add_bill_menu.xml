@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ShowBillsActivity"
+    tools:context=".view.AddBillMenuActivity"
     android:orientation="vertical"
     android:focusable="auto"
     android:background="#FDFEFE">>
@@ -15,23 +15,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Platillos"
+        android:text="Agregar Platillos"
         android:textSize="50dp" />
-
-    <EditText
-        android:id="@+id/bill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Cuenta"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:ems="15"
-        android:focusable="true"
-        android:inputType="text"
-        android:maxLength="30"
-        android:minHeight="48dp"
-        android:singleLine="true"
-        />
 
     <EditText
         android:id="@+id/menu"
@@ -65,11 +50,11 @@
 
 
     <Button
-        android:id="@+id/button_addbill_menu"
+        android:id="@+id/btn_addbill_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Agregar"
-        android:onClick="eventAddMenu"
+        android:onClick="saveBillMenuFun"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "

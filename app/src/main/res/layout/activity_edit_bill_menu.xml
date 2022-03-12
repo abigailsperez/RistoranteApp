@@ -19,21 +19,12 @@
         android:text="Editar cuenta"
         android:textSize="50dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:fontFamily="cursive"
-        android:text="Mesa"
-        android:textSize="50dp" />
-
     <Button
-        android:id="@+id/button_addcategory"
+        android:id="@+id/btn_addbill_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Agregar platillos"
-        android:onClick="editBill"
+        android:onClick="addBillMenu"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:backgroundTint="#52BE80 "
@@ -44,7 +35,7 @@
         />
 
     <TableLayout
-        android:id="@+id/table_menu"
+        android:id="@+id/table_billmenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"

@@ -6,7 +6,8 @@
     android:background="#FDFEFE"
     android:focusable="auto"
     android:orientation="vertical"
-    tools:context=".view.AddCategoryActivity">
+    tools:context=".view.AddCategoryActivity"
+    android:scrollbarSize="@dimen/cardview_default_elevation">
 
     <TextView
         android:layout_width="wrap_content"

@@ -20,53 +20,61 @@
 
     <TableLayout
         android:id="@+id/table_menu"
-        android:layout_width="match_parent"
+        style="@style/CardView.Light"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
-        style="@style/CardView.Light">
+        android:layout_marginTop="50dp">
 
         <TableRow
             android:id="@+id/Cabecera"
             style="@style/CardView.Dark">
-            <TextView android:text="Nombre"
-                android:layout_width="80dp"
+
+            <TextView
+                android:layout_width="108dp"
+                android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:textStyle="bold">
-            </TextView>
-            <TextView android:text="Precio"
-                android:layout_width="50dp"
+                android:text="Nombre"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="87dp"
+                android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:textStyle="bold">
-            </TextView>
-            <TextView android:text="Categoría"
-                android:layout_width="50dp"
+                android:text="Precio"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="94dp"
+                android:layout_height="match_parent"
                 android:layout_column="2"
-                android:layout_weight="5"
+                android:layout_weight="1"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:textStyle="bold">
-            </TextView>
-            <TextView android:text="Acciones"
-                android:layout_width="90dp"
+                android:text="Categoría"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="94dp"
+                android:layout_height="match_parent"
                 android:layout_column="3"
                 android:layout_weight="1"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:textStyle="bold">
-            </TextView>
+                android:text="Acciones"
+                android:textStyle="bold"></TextView>
         </TableRow>
 
 
         <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-        </TableLayout>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
 
 </LinearLayout>

@@ -63,22 +63,6 @@
         android:minHeight="48dp"
         android:singleLine="true"
         />
-
-    <EditText
-        android:id="@+id/available"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Habilitar"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
-        android:ems="15"
-        android:focusable="true"
-        android:inputType="number"
-        android:maxLength="30"
-        android:minHeight="48dp"
-        android:singleLine="true"
-        />
-
     <Button
         android:id="@+id/button_addcategory"
         android:layout_width="wrap_content"

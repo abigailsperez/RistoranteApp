@@ -22,7 +22,7 @@ object ServiceB {
 
     private val retrofit = Retrofit.Builder()
             //http://192.168.1.68:
-        .baseUrl("http://192.168.1.66:8080")
+        .baseUrl("http://192.168.1.65:8080")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(client)
         .build()

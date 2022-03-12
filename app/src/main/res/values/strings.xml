@@ -16,6 +16,12 @@
         <item>4</item>
 
     </string-array>
+
+    <string-array name="available_array">
+        <item>Habilitado</item>
+        <item>Deshabilitado</item>
+    </string-array>
+
     <string name="title_activity_list_bill">ListBillActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

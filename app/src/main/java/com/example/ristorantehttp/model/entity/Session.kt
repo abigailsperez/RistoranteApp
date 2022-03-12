@@ -4,7 +4,7 @@ import java.util.*
 
 data class Session(
     var id: Long,
-    var date_session: Date,
-    var in_out: Int,
+    var dateSession: Date,
+    var inOut: Int,
     var user: Long,
 )

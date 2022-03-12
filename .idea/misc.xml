@@ -34,10 +34,10 @@
         <entry key="..\:/Users/User/Desktop/CRUD/RistoranteHttp/app/src/main/res/layout/table_row_category.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/CRUD/RistoranteHttp/app/src/main/res/layout/table_row_in_out.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/User/Desktop/CRUD/RistoranteHttp/app/src/main/res/layout/table_row_menu.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_add_bill.xml" value="0.213768115942029" />
+        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_add_bill.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_add_bill_menu.xml" value="0.2171875" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_add_category.xml" value="0.25" />
-        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_add_meal.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_add_meal.xml" value="0.18" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_edit_bill.xml" value="0.1" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_edit_bill_menu.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_edit_category.xml" value="0.10688956433637285" />
@@ -48,8 +48,8 @@
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_menu_cashier.xml" value="0.1" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_menu_cheker.xml" value="0.1" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_menu_waiter.xml" value="0.25" />
-        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_bills.xml" value="0.22" />
-        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_menu.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_bills.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_menu.xml" value="0.33" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_session.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_session_in.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/activity_show_session_out.xml" value="0.13272543059777103" />
@@ -57,12 +57,12 @@
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/fragment_first.xml" value="0.10648148148148148" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/recycler_category_row_list.xml" value="0.21979166666666666" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_bill_menu.xml" value="0.1" />
-        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_bill_waiter.xml" value="0.13272543059777103" />
+        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_bill_waiter.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_bills.xml" value="0.1" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_category.xml" value="0.1" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_in.xml" value="0.33" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_in_out.xml" value="0.25" />
-        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_menu.xml" value="0.10688956433637285" />
+        <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_menu.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/Nueva carpeta/ristoranteAppAndroid-master/app/src/main/res/layout/table_row_out.xml" value="0.13272543059777103" />
         <entry key="app/src/main/res/layout/activity_add_category.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_edit_category.xml" value="0.21822916666666667" />
@@ -75,12 +75,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.22" />
-      </ProjectState>
-    </option>
   </component>
 </project>

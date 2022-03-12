@@ -28,9 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
-
-        /*if (email.isFocusable())
-            password.requestFocus()*/
     }
 
     //Función para iniciar sesión
@@ -47,60 +44,54 @@ class MainActivity : AppCompatActivity() {
         call.enqueue(object : Callback<ResponseLogin> {
             override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {
                 when {
-                    //Inicio de Sesión éxitoso
+                    //Inicio de sesión éxitoso
                     response.code() == 200 -> {
 
-                        val idUser: Long = response.body()!!.id
+                        val idUser: Long = response.body()!!.id //Obtiene el id del usuario
                         val usergroup: Long = response.body()!!.userGroup //Obtiene el id del grupo que pertenece el usuario
-                        val rest: Long = response.body()!!.restaurant
+                        val rest: Long = response.body()!!.restaurant //Obtiene el id del restaurante al que pertenece el usuario
 
                         //Valida el grupo al que pertenece y arroja la ventana hacia el menú
                         if (usergroup == 2.toLong()) {
-                            println("ID del usergroup-> " + response.body()!!.userGroup)
-                            /* Vamos a agregar la nueva actividad hacia el menu administrador*/
+                            //Vamos a agregar la nueva actividad hacia el menu administrador
                             val intent: Intent = Intent(
                                 this@MainActivity,
                                 MenuAdminActivity::class.java
                             ).apply {}
-                            intent.putExtra("restaurant", rest)
+                            intent.putExtra("restaurant", rest) //Se envia el id del restaurante a la siguiente actividad
                             startActivity(intent)
-                            println("ID del restaurante-> " + response.body()!!.restaurant)
-
                         } else if (usergroup == 5.toLong()) {
-                            /* Vamos a agregar la nueva actividad hacia el menu cajero*/
+                            //Vamos a agregar la nueva actividad hacia el menu cajero
                             val intent: Intent = Intent(
                                 this@MainActivity,
                                 MenuCashierActivity::class.java
                             ).apply {}
                             intent.putExtra("restaurant", rest)
                             startActivity(intent)
-                            println("ID del restaurante-> " + response.body()!!.restaurant)
-
                         } else if (usergroup == 3.toLong()) {
-                            /* Vamos a agregar la nueva actividad hacia el menu mesero*/
+                            //Vamos a agregar la nueva actividad hacia el menu mesero
                             val intent: Intent = Intent(
                                 this@MainActivity,
                                 MenuWaiterActivity::class.java
                             ).apply {}
-                            intent.putExtra("idUser", idUser)
+                            intent.putExtra("idUser", idUser) //Se envia el id del usuario a la siguiente actividad
+                            intent.putExtra("restaurant", rest)
                             startActivity(intent)
-                            println("ID del restaurante-> " + response.body()!!.restaurant)
-
                         }
-
+                        println("ID del restaurante-> " + response.body()!!.restaurant)
                     }
                     //Error usuario incorrecto
                     response.code() == 404 -> {
                         //Se muestra el mensaje en consola
-                        println("Usuario incorrecto")
+                        println("Usuario incorrecto.")
                         //Se muestra el mensaje en la vista
-                        Toast.makeText(this@MainActivity, "Usuario incorrecto", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity, "Usuario incorrecto.", Toast.LENGTH_LONG).show()
                     }
                     //Error contraseña incorrecta
                     response.code() == 401 -> {
-                        println("Contraseña incorrecta")
+                        println("Contraseña incorrecta.")
                         //Se muestra el mensaje en la vista
-                        Toast.makeText(this@MainActivity, "Contraseña incorrecta", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity, "Contraseña incorrecta.", Toast.LENGTH_LONG).show()
                     }
                     //No se encontró en la BD
                     response.code() == 500 -> {
@@ -116,7 +107,5 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-
     }
-
 }

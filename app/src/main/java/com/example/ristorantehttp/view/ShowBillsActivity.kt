@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -24,7 +23,7 @@ class ShowBillsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.table_row_bills)
+        setContentView(R.layout.activity_show_bills)
 
         table_bills=findViewById(R.id.table_bills)
 
@@ -32,7 +31,9 @@ class ShowBillsActivity : AppCompatActivity() {
     }
 
     //Función para obtener lista de platillos
-    fun getListBillsFun(view: ShowBillsActivity){
+    fun getListBillsFun(showBillsActivity: ShowBillsActivity) {
+
+        println("FUNCIÓN VER CUENTAS")
 
         var otroContador = 0
         val rest =  intent.getLongExtra("restaurant", 0)
@@ -56,7 +57,7 @@ class ShowBillsActivity : AppCompatActivity() {
                             //Se busca en la BD
                             var data =
                                 "id " + it.id +
-                                        "date_bill" + it.dateBill +
+                                        "date_bill" + it.date_Bill +
                                         "dining_table" + it.diningTable +
                                         "user" + it.user
                             listData.add(data)
@@ -65,20 +66,22 @@ class ShowBillsActivity : AppCompatActivity() {
                             println("\n\n")
                             println(
                                 "\nid: " + it.id +
-                                        "\ndate_bill: " + it.dateBill +
+                                        "\ndate_bill: " + it.date_Bill +
                                         "\ndining_table: " + it.diningTable +
                                         "\nuser: " + it.user)
 
                             //Se llena la tabla
 
                             val register =
-                                LayoutInflater.from(this@ShowBillsActivity).inflate(R.layout.table_row_menu, null, false)
+                                LayoutInflater.from(this@ShowBillsActivity).inflate(R.layout.table_row_bills, null, false)
                             val colId: TextView = register.findViewById<View>(R.id.colId) as TextView
-                            val colWaiter: TextView = register.findViewById<View>(R.id.colName) as TextView
-                            val colDate: TextView = register.findViewById<View>(R.id.colPrice) as TextView
+                            val colTable: TextView = register.findViewById<View>(R.id.colTable) as TextView
+                            val colWaiter: TextView = register.findViewById<View>(R.id.colWaiter) as TextView
+                            val colDate: TextView = register.findViewById<View>(R.id.colDate) as TextView
                             colId.text = ""+ it.id
-                            colWaiter.text = ""+it.dateBill
-                            colDate.text = ""+ it.diningTable
+                            colTable.text = ""+ it.diningTable
+                            colWaiter.text = ""+it.user
+                            colDate.text = ""+ it.date_Bill
                             table_bills?.addView(register)
 
                             otroContador ++

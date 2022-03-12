@@ -27,7 +27,7 @@
         android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/btnDeleteMenu"
+        android:id="@+id/btn_deleteMenu"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#E9967A"

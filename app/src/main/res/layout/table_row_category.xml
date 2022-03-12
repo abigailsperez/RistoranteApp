@@ -4,7 +4,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp">
+    android:layout_marginRight="50dp"
+    android:id="@+id/table_row_category">
 
     <TextView
         android:id="@+id/colId"

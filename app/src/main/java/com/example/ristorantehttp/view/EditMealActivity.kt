@@ -21,7 +21,7 @@ class EditMealActivity : AppCompatActivity() {
     private lateinit var name: EditText
     private lateinit var category: EditText
     private lateinit var price: EditText
-    private lateinit var available: EditText
+    //private lateinit var available: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class EditMealActivity : AppCompatActivity() {
         name= findViewById(R.id.name_m)
         category= findViewById(R.id.category_m)
         price= findViewById(R.id.price_m)
-        available= findViewById(R.id.available)
+        //available= findViewById(R.id.available)
     }
 
     //Función para editar platillos
@@ -42,8 +42,6 @@ class EditMealActivity : AppCompatActivity() {
             Toast.makeText(this,"Campo categoría vacío.", Toast.LENGTH_LONG).show()
         }else if (price.text.toString().isEmpty()){
             Toast.makeText(this,"Campo precio vacío.", Toast.LENGTH_LONG).show()
-        }else if (available.text.toString().isEmpty()){
-            Toast.makeText(this,"Campo habilitar vacío.", Toast.LENGTH_LONG).show()
         } else {
 
             println("FUNCIÓN GUARDAR MENÚ")
@@ -70,7 +68,7 @@ class EditMealActivity : AppCompatActivity() {
                     when {
 
                         response.code() == 200 -> {
-                            Toast.makeText(this@EditMealActivity, "GUARDADO", Toast.LENGTH_LONG)
+                            Toast.makeText(this@EditMealActivity, "Guardado con éxito.", Toast.LENGTH_LONG)
                                 .show()
                         }
 
@@ -107,14 +105,14 @@ class EditMealActivity : AppCompatActivity() {
             name.setText("")
             category.setText("")
             price.setText("")
-            available.setText("")
+            //available.setText("")
         }
 
-        val intent: Intent = Intent(
+        /*val intent: Intent = Intent(
             this,
             AddMealActivity::class.java
         ).apply {}
-        startActivity(intent)
+        startActivity(intent)*/
     }
 
 }

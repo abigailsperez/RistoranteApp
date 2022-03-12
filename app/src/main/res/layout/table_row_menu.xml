@@ -3,47 +3,49 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="3dp">
+    android:layout_marginTop="3dp"
+    android:scrollbarSize="@dimen/cardview_default_elevation">
 
     <TextView
         android:id="@+id/colName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:text="Nombre"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/colPrice"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Nombre"
         android:fontFamily="monospace"
         android:singleLine="true"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/colPrice"
-        android:layout_width="20dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="Precio"
-        android:fontFamily="monospace"
-        android:singleLine="true"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/colCategory"
-        android:layout_width="50dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Categoría"
         android:fontFamily="monospace"
         android:singleLine="true"
-        android:textStyle="bold"/>
+        android:text="Categoría"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_editMenu"
-        android:layout_width="60dp"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:onClick="tableEditMenu"
-        android:text="Editar"
-        android:textSize="10sp"
         android:backgroundTint="#E9967A"
         android:fontFamily="monospace"
+        android:onClick="tableEditMenu"
         android:singleLine="true"
-        android:textStyle="bold"/>
+        android:text="Editar"
+        android:textSize="11sp"
+        android:textStyle="bold" />
 
 </TableRow>

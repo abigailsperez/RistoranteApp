@@ -21,7 +21,6 @@ import retrofit2.Response
 
 class AddBillMenuActivity : AppCompatActivity() {
 
-    private lateinit var bill: EditText
     private lateinit var menu: EditText
     private lateinit var quantity: EditText
 
@@ -29,39 +28,19 @@ class AddBillMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_bill_menu)
 
-        bill= findViewById(R.id.bill)
         menu= findViewById(R.id.menu)
         quantity= findViewById(R.id.quantity)
     }
 
-    fun eventButtonAddBill(view: android.view.View) {
-
-        ControllerBill_Menu().saveBill_Menu(bill.text.toString().toLong(),menu.text.toString().toLong(), quantity.text.toString().toLong())
-
-        val notification: Toast = Toast.makeText(
-            this,
-            "Guardado con éxito",
-            Toast.LENGTH_SHORT
-        )
-        notification.show()
-
-        val intent: Intent = Intent(
-            this,
-            MenuAdminActivity::class.java
-        ).apply {}
-        startActivity(intent)
-    }
-
-
-    //Codigo adicional
 //Consumo de web services
 //Función para guardar categorias
-    fun saveBillFun(view: View) {
+    fun saveBillMenuFun(view: View) {
 
         println("FUNCIÓN GUARDAR CUENTA MENÚ")
 
+        val bill = intent.getLongExtra("bill", 0)
         val saveBillMenuObj = SaveBillMenu()
-        saveBillMenuObj.bill = bill.text.toString().toLong() //TextView del name(categoria)
+        saveBillMenuObj.bill = bill //TextView del name(categoria)
         saveBillMenuObj.menu = menu.text.toString().toLong() //response.body()!!.restaurant
         saveBillMenuObj.quantity = quantity.text.toString().toLong()
 
@@ -76,7 +55,7 @@ class AddBillMenuActivity : AppCompatActivity() {
                 when {
 
                     response.code() == 200 -> {
-                        Toast.makeText(this@AddBillMenuActivity, "GUARDADO", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@AddBillMenuActivity, "Guardado con éxito.", Toast.LENGTH_LONG).show()
                     }
 
                     response.code() == 401 -> {

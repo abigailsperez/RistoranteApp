@@ -3,28 +3,25 @@ package com.example.ristorantehttp.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import com.example.ristorantehttp.R
-import com.example.ristorantehttp.container.ListCategoriaResPonseKT
-import com.example.ristorantehttp.container.ListMenuResPonseKT
 import com.example.ristorantehttp.container.ResponseMenu
 import com.example.ristorantehttp.container.SaveMenu
-import com.example.ristorantehttp.controller.ControllerMenu
-import com.example.ristorantehttp.services.InterfaceListCategory
-import com.example.ristorantehttp.services.InterfaceListMenu
 import com.example.ristorantehttp.services.InterfaceSaveMenu
 import com.example.ristorantehttp.services.ServiceB
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.widget.Toast
 
-class AddMealActivity : AppCompatActivity() {
+
+class AddMealActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var name: EditText
     private lateinit var category: EditText
     private lateinit var price: EditText
-    private lateinit var available: EditText
+    //private lateinit var available: EditText
+    private lateinit var av_spinner: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +30,21 @@ class AddMealActivity : AppCompatActivity() {
         name= findViewById(R.id.name_m)
         category= findViewById(R.id.category_m)
         price= findViewById(R.id.price_m)
-        available= findViewById(R.id.available)
+        //available= findViewById(R.id.available)
+        av_spinner = findViewById(R.id.available_spinner)
+
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.available_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            av_spinner.adapter = adapter
+        }
+        av_spinner.onItemSelectedListener = this
     }
 
     //Función para guardar platillos
@@ -45,8 +56,6 @@ class AddMealActivity : AppCompatActivity() {
                 Toast.makeText(this,"Campo categoría vacío.", Toast.LENGTH_LONG).show()
         }else if (price.text.toString().isEmpty()){
             Toast.makeText(this,"Campo precio vacío.", Toast.LENGTH_LONG).show()
-        }else if (available.text.toString().isEmpty()){
-            Toast.makeText(this,"Campo habilitar vacío.", Toast.LENGTH_LONG).show()
         } else {
 
             println("FUNCIÓN GUARDAR MENÚ")
@@ -107,7 +116,7 @@ class AddMealActivity : AppCompatActivity() {
             name.setText("")
             category.setText("")
             price.setText("")
-            available.setText("")
+            //available.setText("")
         }
     }
 
@@ -121,5 +130,33 @@ class AddMealActivity : AppCompatActivity() {
         intent.putExtra("restaurant", rest)
         startActivity(intent)
     }
+
+        override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+            // An item was selected. You can retrieve the selected item using
+            val available = parent.getItemAtPosition(pos)
+            if (available == 0) {
+                println("habilitado")
+            }else if (available == 1){
+                println("deshabilitado")
+            }
+        }
+
+        override fun onNothingSelected(parent: AdapterView<*>) {
+            //Another interface callback
+        }
+
+    /*override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        parent.getItemAtPosition(pos)
+        Toast.makeText(
+            adapterView.getContext(),
+            (adapterView.getItemAtPosition(position)).getNombre(),
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+        TODO("Not yet implemented")
+    }*/
+
 }
 
