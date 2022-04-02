@@ -9,8 +9,8 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.ristorantehttp"
-        minSdk 21
+        applicationId 'com.example.ristorante'
+        minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"

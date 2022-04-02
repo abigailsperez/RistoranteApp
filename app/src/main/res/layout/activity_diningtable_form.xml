@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFEFE"
+    android:focusable="auto"
+    android:orientation="vertical"
+    android:scrollbarSize="@dimen/cardview_default_elevation"
+    tools:context=".view.DiningTable.DiningTableFormActivity">
+
+    <TextView
+        android:id="@+id/title_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="Agregar Mesa"
+        android:textSize="50dp" />
+
+
+    <EditText
+        android:id="@+id/code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Código de la mesa"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Número de asientos"
+        android:inputType="number"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#52BE80"
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:onClick="save"
+        android:singleLine="true"
+        android:text="Guardar"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -4,74 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDFEFE"
     android:focusable="auto"
     android:orientation="vertical"
-    android:background="#FDFEFE"
-    >
+    tools:context=".view.Menu.MenuFormActivity">
+
 
     <TextView
+        android:id="@+id/title_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Ristorante"
+        android:text="Agregar Platillo"
         android:textSize="50dp" />
 
-    <ImageView
-        android:src="@drawable/ic_logo"
-        android:layout_marginTop="30dp"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center" />
-
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/name_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:ems="15"
         android:focusable="true"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress"
+        android:hint="Nombre"
+        android:inputType="text"
         android:maxLength="30"
         android:minHeight="48dp"
-        android:singleLine="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:singleLine="true" />
+
+    <Spinner
+        android:id="@+id/category_m"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:hint="Categoría"
+        android:ems="15"
+        android:spinnerMode="dropdown" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/price_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:ems="15"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
+        android:focusable="true"
+        android:hint="Precio"
+        android:inputType="numberDecimal"
         android:maxLength="30"
         android:minHeight="48dp"
-        android:singleLine="true"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:singleLine="true" />
+
+    <Switch
+        android:id="@+id/available_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disponible"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"/>
 
     <Button
-        android:id="@+id/button_login"
-        android:layout_width="313dp"
+        android:id="@+id/button_addmenu"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
         android:fontFamily="monospace"
-        android:onClick="accessLogin"
+        android:onClick="save"
         android:singleLine="true"
-        android:text="INICIAR SESIÓN"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        android:text="Guardar"
+        android:textStyle="bold" />
 
 </LinearLayout>

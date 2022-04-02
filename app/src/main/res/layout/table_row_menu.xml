@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/colName"
-        android:layout_width="100dp"
+        android:layout_width="173dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="monospace"
@@ -18,22 +18,12 @@
 
     <TextView
         android:id="@+id/colPrice"
-        android:layout_width="80dp"
+        android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="monospace"
         android:singleLine="true"
         android:text="Precio"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/colCategory"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="monospace"
-        android:singleLine="true"
-        android:text="Categoría"
         android:textStyle="bold" />
 
     <Button
@@ -42,7 +32,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#E9967A"
         android:fontFamily="monospace"
-        android:onClick="tableEditMenu"
+        android:onClick="update"
         android:singleLine="true"
         android:text="Editar"
         android:textSize="11sp"

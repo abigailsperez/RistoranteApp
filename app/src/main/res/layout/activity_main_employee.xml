@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainMenuActivity"
+    android:focusable="auto"
+    android:orientation="vertical"
+    android:background="#FDFEFE">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="cursive"
+        android:text="Menú principal"
+        android:textSize="35dp"
+        android:translationX="110dp" />
+
+    <Button
+        android:id="@+id/outs"
+        android:layout_width="178dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/subtitle4"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#E9967A"
+        android:ems="20"
+        android:onClick="addOut"
+        android:text="Salidas" />
+
+    <TextView
+        android:id="@+id/subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subtitle"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:text="Gestión de órdenes"
+        android:textSize="25dp"
+        android:translationX="125dp" />
+
+    <Button
+        android:id="@+id/bills"
+        android:layout_width="367dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/subtitle3"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="22dp"
+        android:backgroundTint="#FAB39A"
+        android:ems="20"
+        android:onClick="eventManageBills"
+        android:text="Órdenes" />
+
+    <TextView
+        android:id="@+id/subtitle4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bills"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:text="Registrar entradas y salidas"
+        android:textSize="25dp"
+        android:translationX="75dp" />
+
+    <Button
+        android:id="@+id/ins"
+        android:layout_width="180dp"
+        android:layout_height="66dp"
+        android:layout_below="@id/subtitle4"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="9dp"
+        android:layout_toLeftOf="@+id/outs"
+        android:backgroundTint="#E9967A"
+        android:ems="20"
+        android:onClick="addIn"
+        android:text="Entradas" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="369dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/subtitle4"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#999999"
+        android:ems="20"
+        android:onClick="logout"
+        android:text="Cerrar sesión" />
+
+
+</RelativeLayout>

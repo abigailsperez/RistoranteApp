@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ristorantehttp">
+    package="com.example.ristorante">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,57 +11,50 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RistoranteHttp"
+        android:theme="@style/Theme.Ristorante.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.ShowSessionInActivity"
+            android:name="com.example.ristorante.view.Checks.SessionInActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ShowBillsActivity"
+            android:name="com.example.ristorante.view.Bill.BillsActivity"
             android:exported="false"
-            android:label="@string/title_activity_list_bill"
-            android:theme="@style/Theme.RistoranteHttp.NoActionBar" />
+            android:label="@string/title_activity_list_bill" />
         <activity
-            android:name=".view.MenuCashierActivity"
+            android:name="com.example.ristorante.view.BillMenu.ShowBillMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MenuWaiterActivity"
+            android:name="com.example.ristorante.view.BillMenu.EditBillMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ShowBillMenuActivity"
+            android:name="com.example.ristorante.view.BillMenu.AddBillMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".view.EditBillMenuActivity"
+            android:name="com.example.ristorante.view.Checks.SessionOutActivity"
             android:exported="false" />
         <activity
-            android:name=".view.AddBillMenuActivity"
+            android:name="com.example.ristorante.view.Menu.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ShowSessionOutActivity"
+            android:name="com.example.ristorante.view.Bill.BillFormActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ShowMenuActivity"
+            android:name="com.example.ristorante.view.DiningTable.DiningTableFormActivity"
             android:exported="false" />
         <activity
-            android:name=".view.AddBillActivity"
+            android:name="com.example.ristorante.view.Menu.MenuFormActivity"
             android:exported="false" />
         <activity
-            android:name=".view.EditMealActivity"
+            android:name="com.example.ristorante.view.Category.CategoryFormActivity"
             android:exported="false" />
         <activity
-            android:name=".view.AddMealActivity"
+            android:name="com.example.ristorante.view.MainMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".view.EditCategoryActivity"
+            android:name="com.example.ristorante.view.Category.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MenuAdminActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.AddCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.ristorante.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

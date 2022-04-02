@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.Bill.BillFormActivity"
+    android:orientation="vertical"
+    android:focusable="auto"
+    android:background="#FDFEFE">>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="Agregar Cuenta"
+        android:textSize="50dp" />
+
+
+    <EditText
+        android:id="@+id/diningTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Mesa"
+        android:inputType="number"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/button_addbill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#52BE80 "
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:onClick="save"
+        android:singleLine="true"
+        android:text="Guardar"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="auto"
+    tools:context=".view.BillMenu.AddBillMenuActivity"
     android:orientation="vertical"
-    android:background="#FDFEFE"
-    >
+    android:focusable="auto"
+    android:background="#FDFEFE">>
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,63 +15,53 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Ristorante"
+        android:text="Agregar Platillos"
         android:textSize="50dp" />
 
-    <ImageView
-        android:src="@drawable/ic_logo"
-        android:layout_marginTop="30dp"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center" />
-
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="Platillo"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:ems="15"
         android:focusable="true"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:maxLength="30"
         android:minHeight="48dp"
         android:singleLine="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="Cantidad"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:ems="15"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
+        android:focusable="true"
+        android:inputType="text"
         android:maxLength="30"
         android:minHeight="48dp"
         android:singleLine="true"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        tools:ignore="SpeakableTextPresentCheck" />
+        />
+
 
     <Button
-        android:id="@+id/button_login"
-        android:layout_width="313dp"
+        android:id="@+id/btn_addbill_menu"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Agregar"
+        android:onClick="saveBillMenuFun"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
         android:fontFamily="monospace"
-        android:onClick="accessLogin"
-        android:singleLine="true"
-        android:text="INICIAR SESIÓN"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        android:singleLine="true"
+        />
 
 </LinearLayout>

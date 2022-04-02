@@ -13,21 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_column="0"
         android:layout_weight="1"
-        android:text="#"
         android:fontFamily="monospace"
         android:singleLine="true"
-        android:textStyle="bold"/>
+        android:text="#"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/colTable"
-        android:layout_width="50dp"
+        android:layout_width="46dp"
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:layout_weight="1"
-        android:text="Mesa"
         android:fontFamily="monospace"
         android:singleLine="true"
-        android:textStyle="bold"/>
+        android:text="Mesa"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/colWaiter"
@@ -42,14 +43,14 @@
 
     <TextView
         android:id="@+id/colDate"
-        android:layout_width="100dp"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_column="3"
         android:layout_weight="1"
-        android:text="Fecha y hora"
         android:fontFamily="monospace"
         android:singleLine="true"
-        android:textStyle="bold"/>
+        android:text="Fecha y hora"
+        android:textStyle="bold" />
 
 
 </TableRow>

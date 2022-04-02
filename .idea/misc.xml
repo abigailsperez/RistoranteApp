@@ -3,6 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/drawable/logo.xml" value="0.2985" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_add_bill.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_add_bill_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_add_category.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_add_meal.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_admin_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_bill_form.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_category.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_diningtable_form.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_edit_bill_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_edit_category.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_employee_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_main_admin.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_main_employee.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_mainmenu.xml" value="0.3428442028985507" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_menu_admin.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_menu_cashier.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_menu_waiter.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_show_bills.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_show_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/activity_show_session_in.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/table_row_bill_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/table_row_bill_waiter.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/table_row_bills.xml" value="0.33" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/table_row_category.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/layout/table_row_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3375" />
+        <entry key="..\:/Users/Uriel/AndroidStudioProjects/RistoranteApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3375" />
+        <entry key="..\:/Users/Uriel/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.3625" />
         <entry key="..\:/Users/User/Desktop/CRUD/RistoranteHttp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2890625" />
         <entry key="..\:/Users/User/Desktop/CRUD/RistoranteHttp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2890625" />
         <entry key="..\:/Users/User/Desktop/CRUD/RistoranteHttp/app/src/main/res/layout/activity_add_bill.xml" value="0.184375" />
