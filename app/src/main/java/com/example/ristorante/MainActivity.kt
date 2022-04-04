@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ristorante.container.User
+import com.example.ristorante.entity.User
 import com.example.ristorante.services.InterfaceUser
 import com.example.ristorante.services.ServiceB
 import com.example.ristorante.view.MainMenuActivity

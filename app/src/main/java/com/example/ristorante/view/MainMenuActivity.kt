@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.ristorante.R
-import com.example.ristorante.container.Session
-import com.example.ristorante.container.User
+import com.example.ristorante.entity.Session
+import com.example.ristorante.entity.User
 import com.example.ristorante.services.InterfaceSession
 import com.example.ristorante.services.ServiceB
 import com.example.ristorante.view.Bill.BillsActivity
@@ -16,7 +16,6 @@ import com.example.ristorante.view.Category.CategoryActivity
 import com.example.ristorante.view.Checks.SessionInActivity
 import com.example.ristorante.view.Checks.SessionOutActivity
 import com.example.ristorante.view.DiningTable.DiningTableFormActivity
-import com.example.ristorante.view.Menu.MenuFormActivity
 import com.example.ristorante.view.Menu.MenuActivity
 import retrofit2.Call
 import retrofit2.Callback

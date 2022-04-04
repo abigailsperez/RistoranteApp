@@ -1,5 +1,6 @@
 package com.example.ristorante.view.Menu
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,14 +9,17 @@ import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ristorante.R
-import com.example.ristorante.container.Menu
+import com.example.ristorante.entity.Menu
 import com.example.ristorante.services.InterfaceMenu
 import com.example.ristorante.services.ServiceB
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class MenuActivity: AppCompatActivity()  {
 
@@ -30,15 +34,21 @@ class MenuActivity: AppCompatActivity()  {
         this.loadData()
     }
 
+    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (it.resultCode == Activity.RESULT_OK) {
+            this.loadData()
+        }
+    }
+
     fun add(view: View){
         val restaurant = intent.getLongExtra("restaurant", 0)
         var intent: Intent = Intent(
             this@MenuActivity,
             MenuFormActivity::class.java
         ).apply{}
-        intent.putExtra("menu", 0)
+        intent.putExtra("menu", 0L)
         intent.putExtra("restaurant", restaurant)
-        startActivity(intent)
+        getResult.launch(intent)
     }
 
     fun update(view: View){
@@ -49,10 +59,12 @@ class MenuActivity: AppCompatActivity()  {
         ).apply{}
         intent.putExtra("menu", view.id.toLong())
         intent.putExtra("restaurant", restaurant)
-        startActivity(intent)
+        getResult.launch(intent)
     }
 
     fun loadData(){
+        table_menu?.removeViews(1, Math.max(0, table_menu!!.getChildCount() - 1))
+
         val service = ServiceB.buildService(InterfaceMenu::class.java)
         val call = service.getAll(intent.getLongExtra("restaurant", 0))
 
@@ -63,24 +75,17 @@ class MenuActivity: AppCompatActivity()  {
             ) {
                 when {
                     response.code() == 200 -> {
-
-                        listData = ArrayList()
+                        val df = DecimalFormat("#.##")
+                        df.roundingMode = RoundingMode.DOWN
 
                         response.body()!!.forEach {
-                            var data = "id " + it.id +
-                                        "name" + it.name +
-                                        "category" + it.category+
-                                        "price" + it.price +
-                                        "available" + it.available
-                            listData.add(data)
-
-                            val register =
-                                LayoutInflater.from(this@MenuActivity).inflate(R.layout.table_row_menu, null, false)
-                            val colName: TextView = register.findViewById<View>(R.id.colName) as TextView
-                            val colPrice: TextView = register.findViewById<View>(R.id.colPrice) as TextView
-                            val btnEditMenu: View = register.findViewById<View>(R.id.btn_editMenu) as Button
+                            val register = LayoutInflater.from(this@MenuActivity)
+                                .inflate(R.layout.table_row_menu, null, false)
+                            val colName: TextView = register.findViewById<View>(R.id.colTable) as TextView
+                            val colPrice: TextView = register.findViewById<View>(R.id.colDateBill) as TextView
+                            val btnEditMenu: View = register.findViewById<View>(R.id.btn_editBill) as Button
                             colName.text = ""+it.name
-                            colPrice.text = "$"+ it.price
+                            colPrice.text = "$"+ df.format(it.price)
                             btnEditMenu.id = (""+ it.id).toInt()
                             table_menu?.addView(register)
                         }

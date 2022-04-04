@@ -1,6 +1,6 @@
 package com.example.ristorante.services
 
-import com.example.ristorante.container.UserGroup
+import com.example.ristorante.entity.UserGroup
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

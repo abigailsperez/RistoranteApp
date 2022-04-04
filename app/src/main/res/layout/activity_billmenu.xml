@@ -1,70 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.BillMenu.EditBillMenuActivity"
-    android:orientation="vertical"
-    android:focusable="auto"
-    android:background="#FDFEFE"
-    android:layout_marginTop="50dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:fontFamily="cursive"
-        android:text="Editar cuenta"
-        android:textSize="50dp" />
-
-    <Button
-        android:id="@+id/btn_addbill_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agregar platillos"
-        android:onClick="addBillMenu"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#52BE80 "
-        android:ems="13"
-        android:fontFamily="monospace"
-        android:textStyle="bold"
-        android:singleLine="true"
-        />
-
-    <TableLayout
-        android:id="@+id/table_billmenu"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        style="@style/CardView.Light">
+        android:background="#FDFEFE"
+        android:focusable="auto"
+        android:orientation="vertical"
+        tools:context=".view.BillMenu.BillMenuActivity">
 
-        <TableRow
-            android:id="@+id/Cabecera"
-            style="@style/CardView.Dark">
-            <TextView android:text="Platillo"
-                android:layout_width="100dp"
-                android:layout_column="0"
-                android:layout_weight="1"/>
-            <TextView android:text="Cantidad"
-                android:layout_width="50dp"
-                android:layout_column="1"
-                android:layout_weight="1">
-            </TextView>
-            <TextView android:text="Acciones"
-                android:layout_width="100dp"
-                android:layout_column="4"
-                android:layout_weight="1">
-            </TextView>
-        </TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="cursive"
+            android:text="Editar cuenta"
+            android:textSize="50dp" />
 
+        <Button
+            android:id="@+id/btn_addbill_menu"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#52BE80 "
+            android:ems="13"
+            android:fontFamily="monospace"
+            android:onClick="add"
+            android:singleLine="true"
+            android:text="Agregar platillos"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@android:drawable/ic_input_add" />
 
-        <TableRow
+        <TableLayout
+            android:id="@+id/table_billmenu"
+            style="@style/CardView.Light"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            tools:layout_marginRight="20dp">
 
-</LinearLayout>
+            <TableRow
+                android:id="@+id/Cabecera"
+                style="@style/CardView.Dark">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_column="0"
+                    android:layout_weight="1"
+                    android:text="Platillo" />
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:text="Cantidad"></TextView>
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_column="2"
+                    android:layout_weight="1"></TextView>
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,9 +1,9 @@
-package com.example.ristorante.container
+package com.example.ristorante.containers
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class BillMenu {
+class BillMenuContainer {
 
     @SerializedName("id") @Expose
     var id: Long = 0
@@ -14,6 +14,13 @@ class BillMenu {
     @SerializedName("menu") @Expose
     var menu: Long = 0
 
-    @SerializedName("quantity") @Expose
+    @SerializedName("name") @Expose
+    var name: String = ""
+
+    @SerializedName("price") @Expose
+    var price: Float = 0F
+
+    @SerializedName("quantity")@Expose
     var quantity: Long = 0
+
 }

@@ -1,82 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFEFE"
-    android:focusable="auto"
-    android:orientation="vertical"
-    tools:context=".view.Category.CategoryActivity"
-    android:scrollbarSize="@dimen/cardview_default_elevation">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:fontFamily="cursive"
-        android:text="Categorías"
-        android:textSize="50dp" />
-
-
-    <Button
-        android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#52BE80"
-        android:ems="13"
-        android:fontFamily="monospace"
-        android:onClick="add"
-        android:singleLine="true"
-        android:text="Agregar nueva"
-        android:textStyle="bold" />
-
-    <TableLayout
-        android:id="@+id/table_category"
-        style="@style/CardView.Light"
-        android:layout_width="347dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="50dp">
+        android:background="#FDFEFE"
+        android:focusable="auto"
+        android:orientation="vertical"
+        android:scrollbarSize="@dimen/cardview_default_elevation"
+        tools:context=".view.Category.CategoryActivity">
 
-        <TableRow
-            android:id="@+id/Cabecera"
-            style="@style/CardView.Dark">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:fontFamily="cursive"
+            android:text="Categorías"
+            android:textSize="50dp" />
 
-            <TextView
-                android:layout_width="25dp"
-                android:layout_column="0"
-                android:fontFamily="monospace"
-                android:paddingRight="3dip"
-                android:singleLine="true"
-                android:text="#"
-                android:textStyle="bold"></TextView>
 
-            <TextView
-                android:layout_width="150dp"
-                android:layout_column="1"
-                android:fontFamily="monospace"
-                android:padding="3dip"
-                android:singleLine="true"
-                android:text="Categoría"
-                android:textStyle="bold"></TextView>
+        <Button
+            android:id="@+id/save"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#52BE80"
+            android:ems="13"
+            android:fontFamily="monospace"
+            android:onClick="add"
+            android:singleLine="true"
+            android:text="Agregar nueva"
+            android:textStyle="bold"
+            app:icon="@android:drawable/ic_input_add" />
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_column="2"
-                android:fontFamily="monospace"
-                android:singleLine="true"
-                android:text="Acciones"
-                android:textStyle="bold"></TextView>
-        </TableRow>
+        <TableLayout
+            android:id="@+id/table_category"
+            style="@style/CardView.Light"
+            android:layout_width="332dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp">
 
-        <TableRow
-            android:id="@+id/Category"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+            <TableRow
+                android:id="@+id/Cabecera"
+                style="@style/CardView.Dark">
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_column="0"
+                    android:fontFamily="monospace"
+                    android:paddingRight="3dip"
+                    android:singleLine="true"
+                    android:text="#"
+                    android:textStyle="bold"
+                    android:visibility="gone"></TextView>
+
+                <TextView
+                    android:layout_width="264dp"
+                    android:layout_height="30dp"
+                    android:layout_column="1"
+                    android:fontFamily="monospace"
+                    android:padding="3dip"
+                    android:singleLine="true"
+                    android:text="Categoría"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_column="2"
+                    android:fontFamily="monospace"
+                    android:singleLine="true"
+                    android:textStyle="bold"></TextView>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>

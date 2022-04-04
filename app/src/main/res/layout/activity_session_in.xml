@@ -20,38 +20,41 @@
 
     <TableLayout
         android:id="@+id/table_seIn"
+        style="@style/CardView.Light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="10dp"
-        style="@style/CardView.Light">
+        tools:layout_marginRight="20dp">
 
         <TableRow
             android:id="@+id/Cabecera"
             style="@style/CardView.Dark">
-            <TextView android:text="Nombre"
-                android:layout_width="100dp"
+
+            <TextView
+                android:layout_width="200dp"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:textStyle="bold">
-            </TextView>
+                android:text="Nombre"
+                android:textStyle="bold"></TextView>
+
             <TextView
                 android:id="@+id/colDate"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_weight="1"
-                android:text="Fecha y hora"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:textStyle="bold"/>
+                android:text="Fecha y hora"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </TableLayout>
 
 </LinearLayout>

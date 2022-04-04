@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/table_row_category"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,11 +15,12 @@
         android:fontFamily="monospace"
         android:singleLine="true"
         android:text="#"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <TextView
-        android:id="@+id/colName"
-        android:layout_width="196dp"
+        android:id="@+id/colTable"
+        android:layout_width="257dp"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:singleLine="true"
@@ -27,13 +29,14 @@
 
     <Button
         android:id="@+id/btn_editCategory"
-        android:layout_width="90dp"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="55dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#E9967A"
         android:fontFamily="monospace"
         android:onClick="update"
         android:singleLine="true"
-        android:text="Editar"
         android:textSize="11sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:icon="@android:drawable/ic_menu_edit" />
 </TableRow>

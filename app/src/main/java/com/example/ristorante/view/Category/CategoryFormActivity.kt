@@ -1,5 +1,6 @@
 package com.example.ristorante.view.Category
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,7 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.ristorante.R
-import com.example.ristorante.container.Category
+import com.example.ristorante.entity.Category
 import com.example.ristorante.services.InterfaceCategory
 import com.example.ristorante.services.ServiceB
 import retrofit2.Call
@@ -54,11 +55,17 @@ class CategoryFormActivity : AppCompatActivity() {
         })
     }
 
-    // Guardar una categoría
-    fun save(view: View){
+    fun validate(): Boolean{
         if(name.text.toString().isEmpty()){
             Toast.makeText(this,"Campo nombre vacío.", Toast.LENGTH_LONG).show()
-        } else {
+            return false
+        }
+        return true
+    }
+
+    // Guardar una categoría
+    fun save(view: View){
+        if(validate()){
             val obj = Category()
             obj.id = intent.getLongExtra("category", 0)
             obj.name = name.text.toString()
@@ -105,8 +112,8 @@ class CategoryFormActivity : AppCompatActivity() {
                     ).show()
                 }
             })
-            name.setText("")
+            setResult(Activity.RESULT_OK)
+            this.finish()
         }
     }
-
 }

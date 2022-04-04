@@ -18,16 +18,12 @@
             android:exported="false" />
         <activity
             android:name="com.example.ristorante.view.Bill.BillsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_list_bill" />
-        <activity
-            android:name="com.example.ristorante.view.BillMenu.ShowBillMenuActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ristorante.view.BillMenu.EditBillMenuActivity"
+            android:name="com.example.ristorante.view.BillMenu.BillMenuActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ristorante.view.BillMenu.AddBillMenuActivity"
+            android:name="com.example.ristorante.view.BillMenu.BillMenuFormActivity"
             android:exported="false" />
         <activity
             android:name="com.example.ristorante.view.Checks.SessionOutActivity"

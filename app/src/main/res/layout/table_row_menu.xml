@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
     android:layout_marginTop="3dp"
+    android:layout_marginRight="20dp"
     android:scrollbarSize="@dimen/cardview_default_elevation">
 
     <TextView
-        android:id="@+id/colName"
-        android:layout_width="173dp"
+        android:id="@+id/colTable"
+        android:layout_width="221dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="monospace"
@@ -17,8 +20,8 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/colPrice"
-        android:layout_width="64dp"
+        android:id="@+id/colDateBill"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="monospace"
@@ -27,15 +30,16 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_editMenu"
-        android:layout_width="90dp"
+        android:id="@+id/btn_editBill"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="55dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#E9967A"
         android:fontFamily="monospace"
         android:onClick="update"
         android:singleLine="true"
-        android:text="Editar"
         android:textSize="11sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:icon="@android:drawable/ic_menu_edit" />
 
 </TableRow>

@@ -1,6 +1,7 @@
 package com.example.ristorante.services
 
-import com.example.ristorante.container.Bill
+import com.example.ristorante.containers.BillContainer
+import com.example.ristorante.entity.Bill
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -13,6 +14,6 @@ interface InterfaceBill {
     fun save(@Body data: Bill): Call<Bill>
 
     @GET("/api/v1/bill/list/{id}")
-    fun getAll(@Path("id") restaurant: Long): Call<List<Bill>>
+    fun getAll(@Path("id") restaurant: Long): Call<List<BillContainer>>
 
 }

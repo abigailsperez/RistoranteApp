@@ -4,64 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.BillMenu.AddBillMenuActivity"
+    tools:context=".view.BillMenu.BillMenuFormActivity"
     android:orientation="vertical"
     android:focusable="auto"
-    android:background="#FDFEFE">>
+    android:background="#FDFEFE"><![CDATA[>
+
+
+
+    ]]>
 
     <TextView
+        android:id="@+id/title_bm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_margin="50dp"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Agregar Platillos"
+        android:text="Agregar platillo a esta orden"
         android:textSize="50dp" />
 
-    <EditText
-        android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Platillo"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:ems="15"
-        android:focusable="true"
-        android:inputType="number"
-        android:maxLength="30"
-        android:minHeight="48dp"
-        android:singleLine="true"
-        />
+    <Spinner
+        android:id="@+id/menuSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_margin="50dp" />
 
     <EditText
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Cantidad"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:ems="15"
         android:focusable="true"
-        android:inputType="text"
+        android:hint="Cantidad"
+        android:inputType="number"
         android:maxLength="30"
         android:minHeight="48dp"
-        android:singleLine="true"
-        />
+        android:singleLine="true" />
 
 
     <Button
         android:id="@+id/btn_addbill_menu"
-        android:layout_width="wrap_content"
+        android:layout_width="311dp"
         android:layout_height="wrap_content"
-        android:text="Agregar"
-        android:onClick="saveBillMenuFun"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
         android:fontFamily="monospace"
-        android:textStyle="bold"
+        android:onClick="save"
         android:singleLine="true"
-        />
+        android:text="Agregar"
+        android:textStyle="bold" />
 
 </LinearLayout>

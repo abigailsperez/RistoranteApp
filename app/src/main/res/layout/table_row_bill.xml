@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    android:layout_marginRight="2dp"
-    android:layout_marginLeft="2dp">
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginRight="20dp"
+    android:scrollbarSize="@dimen/cardview_default_elevation">
 
     <TextView
         android:id="@+id/colTable"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_column="0"
         android:layout_weight="1"
         android:fontFamily="monospace"
         android:singleLine="true"
@@ -19,39 +21,27 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/colWaiter"
-        android:layout_width="61dp"
+        android:id="@+id/colDateBill"
+        android:layout_width="167dp"
         android:layout_height="wrap_content"
-        android:layout_column="1"
         android:layout_weight="1"
         android:fontFamily="monospace"
         android:singleLine="true"
-        android:text="Mesero"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/colDate"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_column="2"
-        android:layout_weight="1"
-        android:fontFamily="monospace"
-        android:singleLine="true"
-        android:text="Fecha y hora"
+        android:text="Fecha"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_editBill"
-        android:layout_width="80dp"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="55dp"
         android:layout_height="wrap_content"
-        android:layout_column="2"
         android:backgroundTint="#E9967A"
         android:fontFamily="monospace"
         android:onClick="update"
         android:singleLine="true"
-        android:text="Editar"
         android:textSize="11sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        app:icon="@android:drawable/ic_menu_edit"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </TableRow>

@@ -1,12 +1,13 @@
 package com.example.ristorante.view.Menu
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ristorante.R
-import com.example.ristorante.container.Category
-import com.example.ristorante.container.Menu
+import com.example.ristorante.entity.Category
+import com.example.ristorante.entity.Menu
 import com.example.ristorante.services.InterfaceCategory
 import com.example.ristorante.services.InterfaceMenu
 import com.example.ristorante.services.ServiceB
@@ -20,7 +21,6 @@ class MenuFormActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
     private lateinit var name: EditText
     private lateinit var category: Category
     private lateinit var categorySpinner: Spinner
-    private lateinit var list: List<Category>
     private lateinit var price: EditText
     private lateinit var available: Switch
 
@@ -30,9 +30,10 @@ class MenuFormActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         title = findViewById(R.id.title_m)
         name = findViewById(R.id.name_m)
-        categorySpinner  = findViewById(R.id.category_m)
+        categorySpinner = findViewById(R.id.category_m)
         price = findViewById(R.id.price_m)
         available = findViewById(R.id.available_m)
+        available.isChecked = true
 
         this.loadData()
         if(intent.getLongExtra("menu", 0) != 0L){
@@ -53,14 +54,18 @@ class MenuFormActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
             ) {
                 when {
                     response.code() == 200 -> {
-                        list = response.body()!!
                         val adapter: ArrayAdapter<Category> = ArrayAdapter<Category>(
                             applicationContext,
                             android.R.layout.simple_spinner_dropdown_item,
-                            list
+                            response.body()!!
                         )
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                         categorySpinner.adapter = adapter
+
+                        val menu = intent.getLongExtra("menu", 0L)
+                        if(menu != 0L){
+                            fillMenuData(menu, adapter)
+                        }
                     }
                     response.code() == 401 -> { //Error en el navegador
                         Toast.makeText(this@MenuFormActivity, "Ha ocurrido un error. Intente más tarde.", Toast.LENGTH_LONG).show()
@@ -77,23 +82,25 @@ class MenuFormActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                 Toast.makeText(this@MenuFormActivity, "Ha ocurrido un error.", Toast.LENGTH_LONG).show()
             }
         })
+    }
 
-        val service2 = ServiceB.buildService(InterfaceMenu::class.java)
-        val call2 = service2.getById(intent.getLongExtra("menu", 0))
+    private fun fillMenuData(menuID: Long, adapter: ArrayAdapter<Category>){
+        val service = ServiceB.buildService(InterfaceMenu::class.java)
+        val call = service.getById(menuID)
 
-        call2.enqueue(object : Callback<Menu> {
+        call.enqueue(object : Callback<Menu> {
             override fun onResponse(call2: Call<Menu>, response: Response<Menu>) {
                 when {
                     response.code() == 200 -> {
-                        name.setText(response.body()!!.name)
-                        price.setText(response.body()!!.price.toString())
+                        var menu: Menu = response.body()!!
+                        name.setText(menu.name)
+                        price.setText(menu.price.toString())
 
-                        available.isChecked = response.body()!!.available != 0L
+                        available.isChecked = menu.available != 0L
 
-                        val adapter = categorySpinner.adapter
                         for (i in 0 until adapter.count) {
-                            val c = adapter.getItem(i) as Category
-                            if(c.id == response.body()!!.category){
+                            val category = adapter.getItem(i) as Category
+                            if(category.id == menu.category){
                                 categorySpinner.setSelection(i)
                                 break
                             }
@@ -118,19 +125,15 @@ class MenuFormActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         return true
     }
 
-    fun getCategories() {
-
-    }
-
     // Función para guardar platillos
-    fun save(view: View) = try{
+    fun save(view: View){
         if(validate()){
             val obj = Menu()
             obj.id = intent.getLongExtra("menu", 0)
             obj.name = name.text.toString()
             category = categorySpinner.selectedItem as Category
             obj.category = category.id
-            obj.price = price.text.toString().toLong()
+            obj.price = price.text.toString().toFloat()
             obj.available = if (available.isChecked) 1 else 0
 
             val service = ServiceB.buildService(InterfaceMenu::class.java)
@@ -168,11 +171,9 @@ class MenuFormActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                 }
 
             })
+            setResult(Activity.RESULT_OK)
+            this.finish()
         }
-        name.setText("")
-        price.setText("")
-    } catch (e: Exception) {
-        Toast.makeText(this,e.message, Toast.LENGTH_LONG).show()
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {

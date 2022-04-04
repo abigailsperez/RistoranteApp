@@ -1,176 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainMenuActivity"
-    android:focusable="auto"
-    android:orientation="vertical"
-    android:background="#FDFEFE">
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="392dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo" />
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FDFEFE"
+        android:focusable="auto"
+        android:orientation="vertical"
+        tools:context=".view.MainMenuActivity">
 
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="cursive"
-        android:text="Menú principal"
-        android:textSize="35dp"
-        android:translationX="110dp" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="392dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:id="@+id/outs"
-        android:layout_width="178dp"
-        android:layout_height="65dp"
-        android:layout_below="@id/bills"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="65dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="#E9967A"
-        android:ems="20"
-        android:onClick="eventShowOut"
-        android:text="Salidas" />
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="cursive"
+            android:text="Menú principal"
+            android:textSize="35dp"
+            android:translationX="110dp" />
 
-    <Button
-        android:id="@+id/menus"
-        android:layout_width="180dp"
-        android:layout_height="64dp"
-        android:layout_below="@id/subtitle2"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="#E9967A"
-        android:ems="20"
-        android:onClick="eventManageMenu"
-        android:text="Platillos" />
+        <Button
+            android:id="@+id/outs"
+            android:layout_width="178dp"
+            android:layout_height="65dp"
+            android:layout_below="@id/bills"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#E9967A"
+            android:ems="20"
+            android:onClick="eventShowOut"
+            android:text="Salidas" />
 
-    <Button
-        android:id="@+id/categories"
-        android:layout_width="180dp"
-        android:layout_height="64dp"
-        android:layout_below="@id/subtitle2"
-        android:layout_alignParentLeft="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/menus"
-        android:backgroundTint="#E9967A"
-        android:ems="20"
-        android:fontFamily="monospace"
-        android:onClick="eventManageCategories"
-        android:singleLine="true"
-        android:text="Categorías"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/menus"
+            android:layout_width="180dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/subtitle2"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#E9967A"
+            android:ems="20"
+            android:onClick="eventManageMenu"
+            android:text="Platillos" />
 
-    <Button
-        android:id="@+id/dts"
-        android:layout_width="180dp"
-        android:layout_height="64dp"
-        android:layout_below="@id/subtitle2"
-        android:layout_alignParentLeft="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="138dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/menus"
-        android:backgroundTint="#FAB39A"
-        android:ems="20"
-        android:fontFamily="monospace"
-        android:onClick="eventManageDinningTables"
-        android:singleLine="true"
-        android:text="Mesas"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/categories"
+            android:layout_width="180dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/subtitle2"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/menus"
+            android:backgroundTint="#E9967A"
+            android:ems="20"
+            android:fontFamily="monospace"
+            android:onClick="eventManageCategories"
+            android:singleLine="true"
+            android:text="Categorías"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/subtitle3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subtitle"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="159dp"
-        android:fontFamily="cursive"
-        android:text="Gestión de órdenes"
-        android:textSize="25dp"
-        android:translationX="125dp" />
+        <Button
+            android:id="@+id/dts"
+            android:layout_width="180dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/subtitle2"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/menus"
+            android:backgroundTint="#FAB39A"
+            android:ems="20"
+            android:fontFamily="monospace"
+            android:onClick="eventManageDinningTables"
+            android:singleLine="true"
+            android:text="Mesas"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/bills"
-        android:layout_width="180dp"
-        android:layout_height="64dp"
-        android:layout_below="@id/subtitle2"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="138dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="#FAB39A"
-        android:ems="20"
-        android:onClick="eventManageBills"
-        android:text="Órdenes" />
+        <TextView
+            android:id="@+id/subtitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtitle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="159dp"
+            android:fontFamily="cursive"
+            android:text="Gestión de órdenes"
+            android:textSize="25dp"
+            android:translationX="125dp" />
 
-    <TextView
-        android:id="@+id/subtitle4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subtitle"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="290dp"
-        android:fontFamily="cursive"
-        android:text="Gestión de entradas y salidas"
-        android:textSize="25dp"
-        android:translationX="75dp" />
+        <Button
+            android:id="@+id/bills"
+            android:layout_width="180dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/subtitle2"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="138dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#FAB39A"
+            android:ems="20"
+            android:onClick="eventManageBills"
+            android:text="Órdenes" />
 
-    <Button
-        android:id="@+id/ins"
-        android:layout_width="180dp"
-        android:layout_height="66dp"
-        android:layout_below="@id/dts"
-        android:layout_alignParentLeft="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/outs"
-        android:backgroundTint="#E9967A"
-        android:ems="20"
-        android:onClick="eventShowIn"
-        android:text="Entradas" />
+        <TextView
+            android:id="@+id/subtitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtitle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="290dp"
+            android:fontFamily="cursive"
+            android:text="Gestión de entradas y salidas"
+            android:textSize="25dp"
+            android:translationX="75dp" />
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="369dp"
-        android:layout_height="58dp"
-        android:layout_below="@id/subtitle4"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="#999999"
-        android:ems="20"
-        android:onClick="logout"
-        android:text="Cerrar sesión" />
+        <Button
+            android:id="@+id/ins"
+            android:layout_width="180dp"
+            android:layout_height="66dp"
+            android:layout_below="@id/dts"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/outs"
+            android:backgroundTint="#E9967A"
+            android:ems="20"
+            android:onClick="eventShowIn"
+            android:text="Entradas" />
 
-    <TextView
-        android:id="@+id/subtitle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subtitle"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:fontFamily="cursive"
-        android:text="Gestión del menú"
-        android:textSize="25dp"
-        android:translationX="130dp" />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="369dp"
+            android:layout_height="58dp"
+            android:layout_below="@id/subtitle4"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#999999"
+            android:ems="20"
+            android:onClick="logout"
+            android:text="Cerrar sesión" />
 
+        <TextView
+            android:id="@+id/subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtitle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:fontFamily="cursive"
+            android:text="Gestión del menú"
+            android:textSize="25dp"
+            android:translationX="130dp" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

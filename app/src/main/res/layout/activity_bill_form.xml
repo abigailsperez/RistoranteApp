@@ -10,6 +10,7 @@
     android:background="#FDFEFE">>
 
     <TextView
+        android:id="@+id/title_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -19,23 +20,26 @@
         android:textSize="50dp" />
 
 
-    <EditText
-        android:id="@+id/diningTable"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:ems="15"
-        android:focusable="true"
-        android:hint="Mesa"
-        android:inputType="number"
-        android:maxLength="30"
-        android:minHeight="48dp"
-        android:singleLine="true" />
+        android:layout_margin="50dp"
+        android:text="Seleccione la mesa: " />
+
+    <Spinner
+        android:id="@+id/dtSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        tools:layout_marginLeft="50dp"
+        tools:layout_marginRight="50dp" />
 
     <Button
         android:id="@+id/button_addbill"
-        android:layout_width="wrap_content"
+        android:layout_width="311dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"

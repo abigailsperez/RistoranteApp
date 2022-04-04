@@ -8,7 +8,8 @@ import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.example.ristorante.R
-import com.example.ristorante.container.Session
+import com.example.ristorante.containers.SessionContainer
+import com.example.ristorante.entity.Session
 import com.example.ristorante.services.InterfaceSession
 import com.example.ristorante.services.ServiceB
 import retrofit2.Call
@@ -32,20 +33,20 @@ class SessionOutActivity : AppCompatActivity() {
         val service = ServiceB.buildService(InterfaceSession::class.java)
         val call = service.getAllOut(intent.getLongExtra("restaurant", 0))
 
-        call.enqueue(object : Callback<List<Session>> {
+        call.enqueue(object : Callback<List<SessionContainer>> {
             override fun onResponse(
-                call: Call<List<Session>>,
-                response: Response<List<Session>>
+                call: Call<List<SessionContainer>>,
+                response: Response<List<SessionContainer>>
             ) {
                 when {
                     response.code() == 200 -> {
                         listData = ArrayList()
                         response.body()!!.forEach {
                             val register = LayoutInflater.from(this@SessionOutActivity)
-                                .inflate(R.layout.table_row_in, null, false)
-                            val colName: TextView = register.findViewById<View>(R.id.colName) as TextView
+                                .inflate(R.layout.table_row_session, null, false)
+                            val colName: TextView = register.findViewById<View>(R.id.colTable) as TextView
                             val colDate: TextView = register.findViewById<View>(R.id.colDate) as TextView
-                            colName.text = "" + it.user
+                            colName.text = "" + it.name
                             colDate.text = "" + it.dateSession
                             table_seOut?.addView(register)
                         }
@@ -61,7 +62,7 @@ class SessionOutActivity : AppCompatActivity() {
                     }
                 }
             }
-            override fun onFailure(call: Call<List<Session>>, t: Throwable) {
+            override fun onFailure(call: Call<List<SessionContainer>>, t: Throwable) {
                 Toast.makeText(this@SessionOutActivity, "Ha ocurrido un error", Toast.LENGTH_LONG).show()
             }
         })

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="50dp"
     android:background="#FDFEFE"
     android:focusable="auto"
     android:orientation="vertical"
@@ -15,39 +14,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
         android:fontFamily="cursive"
         android:text="Lista de Platillos"
         android:textSize="50dp" />
 
     <Button
         android:id="@+id/save"
-        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="306dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#52BE80"
         android:ems="13"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif-smallcaps"
         android:onClick="add"
         android:singleLine="true"
         android:text="Agregar nuevo"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:icon="@android:drawable/ic_input_add" />
 
     <TableLayout
         android:id="@+id/table_menu"
         style="@style/CardView.Light"
-        android:layout_width="wrap_content"
+        android:layout_width="367dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        tools:layout_marginRight="20dp">
 
         <TableRow
             android:id="@+id/Cabecera"
             style="@style/CardView.Dark">
 
             <TextView
-                android:layout_width="194dp"
-                android:layout_height="match_parent"
+                android:layout_width="221dp"
+                android:layout_height="30dp"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:fontFamily="monospace"
@@ -56,7 +59,7 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
-                android:layout_width="102dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -66,13 +69,12 @@
                 android:textStyle="bold"></TextView>
 
             <TextView
-                android:layout_width="88dp"
+                android:layout_width="55dp"
                 android:layout_height="match_parent"
                 android:layout_column="3"
                 android:layout_weight="1"
                 android:fontFamily="monospace"
                 android:singleLine="true"
-                android:text="Acciones"
                 android:textStyle="bold"></TextView>
         </TableRow>
 

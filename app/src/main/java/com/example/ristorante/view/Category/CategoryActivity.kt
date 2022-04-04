@@ -1,18 +1,20 @@
 package com.example.ristorante.view.Category
+
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ristorante.R
-import com.example.ristorante.container.Category
+import com.example.ristorante.entity.Category
 import com.example.ristorante.services.InterfaceCategory
 import com.example.ristorante.services.ServiceB
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.widget.TableLayout
 
 
 class CategoryActivity : AppCompatActivity() {
@@ -25,8 +27,13 @@ class CategoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_category)
 
         table_category = findViewById(R.id.table_category)
-
         this.loadData()
+    }
+
+    private val getResult = registerForActivityResult(StartActivityForResult()) {
+        if (it.resultCode == Activity.RESULT_OK) {
+            this.loadData()
+        }
     }
 
     fun add(view: View){
@@ -35,9 +42,9 @@ class CategoryActivity : AppCompatActivity() {
             this@CategoryActivity,
             CategoryFormActivity::class.java
         ).apply{}
-        intent.putExtra("category", 0)
+        intent.putExtra("category", 0L)
         intent.putExtra("restaurant", restaurant)
-        startActivity(intent)
+        getResult.launch(intent)
     }
 
     fun update(view: View){
@@ -48,17 +55,15 @@ class CategoryActivity : AppCompatActivity() {
         ).apply{}
         intent.putExtra("category", view.id.toLong())
         intent.putExtra("restaurant", restaurant)
-        startActivity(intent)
+        getResult.launch(intent)
     }
 
     // Función para obtener lista de categorias
     fun loadData(){
-        table_category?.removeAllViews() // Se limpia la tabla de categorías
-        val restaurant = intent.getLongExtra("restaurant", 0)
-        println("restaurante: " + restaurant)
+        table_category?.removeViews(1, Math.max(0, table_category!!.getChildCount() - 1))
 
         val service = ServiceB.buildService(InterfaceCategory::class.java)
-        val call = service.getAll(restaurant)
+        val call = service.getAll(intent.getLongExtra("restaurant", 0))
 
         call.enqueue(object : Callback<List<Category>> {
             override fun onResponse(
@@ -67,17 +72,11 @@ class CategoryActivity : AppCompatActivity() {
             ) {
                 when {
                     response.code() == 200 -> {
-                        listData = ArrayList()
                         response.body()!!.forEach {
-                            var data =
-                                "id " + it.id +
-                                "name" + it.name
-                            listData.add(data)
-
                             val register = LayoutInflater.from(this@CategoryActivity)
                                     .inflate(R.layout.table_row_category, null, false)
                                 val colId: TextView = register.findViewById<View>(R.id.colId) as TextView
-                                val colName: TextView = register.findViewById<View>(R.id.colName) as TextView
+                                val colName: TextView = register.findViewById<View>(R.id.colTable) as TextView
                                 val btnEdit: View = register.findViewById<View>(R.id.btn_editCategory) as Button
                             colId.text = ""+ it.id
                             colName.text = ""+it.name
@@ -101,5 +100,4 @@ class CategoryActivity : AppCompatActivity() {
              }
         })
     }
-
 }

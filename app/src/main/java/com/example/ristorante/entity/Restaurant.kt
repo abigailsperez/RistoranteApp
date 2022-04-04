@@ -1,9 +1,9 @@
-package com.example.ristorante.container
+package com.example.ristorante.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class UserGroup {
+class Restaurant {
 
     @SerializedName("id") @Expose
     var id: Long = 0

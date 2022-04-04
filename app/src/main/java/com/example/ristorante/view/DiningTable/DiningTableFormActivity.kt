@@ -6,7 +6,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ristorante.R
-import com.example.ristorante.container.DiningTable
+import com.example.ristorante.entity.DiningTable
 import com.example.ristorante.services.InterfaceDiningTable
 import com.example.ristorante.services.ServiceB
 import retrofit2.Call
@@ -85,8 +85,7 @@ class DiningTableFormActivity: AppCompatActivity() {
                     ).show()
                 }
             })
-            code.setText("")
-            people.setText("")
+            this.finish()
         }
     }
 }
